@@ -1,0 +1,81 @@
+/* Invoke Themes */
+/* Variables for Dark Mode */
+.dark-mode {
+    --main-background-color: #1A1A1A;
+    --header-background: black;
+    --icon-color: #BEBEBE;
+    --accent-color: #FBB217;
+    --font-color: white;
+    --footer-font-color: black;
+    --footer-color: #CECECE;
+    --newsletter-color: black;
+    --box-shadow: #EDECED;
+    transition: .5s ease-in-out;
+}
+
+/* Variables for Light Mode (Default) */
+:root {
+    --main-background-color: #E5E5E5;
+    --header-background: white;
+    --icon-color: #414141;
+    --accent-color: #FBB217;
+    --font-color: black;
+    --footer-font-color: white;
+    --footer-color: #313131;
+    --newsletter-color: black;
+    --box-shadow: #121312;
+    transition: .5s ease-in-out;
+}
+
+/* Major CSS */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: var(--main-background-color);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--font-color);
+}
+
+/* Revoke unwanted behavior of elements */
+
+/* Removes blue link color and underline */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Removes outline when pressed */
+input, button {
+    outline: none;
+}
+
+/*
+   ######   ##       ######   ##  ##
+   ##       ##       ##        #### 
+   ######   ##       ######     ##  
+   ##       ##       ##        ####  
+   ##       ######   ######   ##  ##
+*/
+.flex-wrapper {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    position: relative;
+
+    height: fit-content;
+    min-height: 10px;
+    box-shadow: 0 0 3px 2px var(--box-shadow);
+}
+
+.body-container .content {
+    box-shadow: 0 0 3px 2px #121312;
+}

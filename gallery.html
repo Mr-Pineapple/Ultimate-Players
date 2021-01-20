@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Ultimate Players - Home</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- Stylesheets -->
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/footer.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/header.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/loader.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/popups.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/index.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/gallery.css'>
+    <!-- JS Scripts -->
+    <script src='./js/index.js'>
+        var counter = 1;
+        setInterval(function(){
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if(counter > 4){
+            counter = 1;
+            }
+        }, 5000);
+    </script>
+    <!-- Icons -->
+    <script src="./js/fonts.js"></script>
+</head>
+<body onload="readTheme(); loading(); tabs(0);">
+
+    <div id="loader">
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="center"><p>U</p></div>
+    </div>
+
+    <div id="page" style="display: none;" class="fade-in">
+
+        <!-- Settings Page -->
+        <div id="settingsBox" class="settings-page">
+
+            <!-- Settings content -->
+            <div class="settings-content">
+                <div class="flex-wrapper">
+                    <div class="leftbox">
+                        <a onclick="tabs(0)" class="tab"><i class="fa fa-user"></i></a>
+                        <a onclick="tabs(1)" class="tab"><i class="far fa-envelope-open-text"></i></a>
+                        <a onclick="tabs(2)" class="tab"><i class="far fa-cog"></i></a>
+                    </div>
+                </div>
+                <div class="rightbox">
+                    <div class="profile tabShow">
+                        <h1>Personal Info</h1>
+                        <h2>Full Name</h2>
+                        <input type="text" id="infoName" class="input" placeholder="John Doe">
+                        <h2>Birthday</h2>
+                        <input type="date" id="infoBirth" class="input" placeholder="20 April, 1995">
+                        <h2>Gender</h2>
+                        <input type="text" id="infoGender" class="input" placeholder="Male">
+                        <h2>Email</h2>
+                        <input type="text" id="infoEmail" class="input" placeholder="example@example.com">
+                        <h2>Password</h2>
+                        <input type="text" id="infoPassword" class="input" placeholder="••••••••••••">
+                        <br>
+                        <button class="update" onclick="updateInfo()">Confirm</button>
+                    </div>
+
+                    <div class="contact tabShow">
+                        <h1>Contact</h1>
+                        <h2>Name</h2>
+                        <input type="text" class="input">
+                        <h2>Email</h2>
+                        <input type="text" class="input">
+                        <h2>Category</h2>
+                        <input type="text" class="input">
+                        <h2>Message</h2>
+                        <textarea type="text" class="input"></textarea>
+                        <br>
+                        <button class="update">Send</button>
+                    </div>
+
+                    <div class="settings tabShow">
+                        <h1>Settings</h1>
+
+                        <h2>Dark Mode</h2>
+                        <label class="switch">
+                            <input type="checkbox" id="mode-switch" onclick="changeTheme()">
+                            <span class="slider"></span>
+                        </label>
+
+                        <h2>Reduced Motion
+                            <div class="info">
+                                &#x1F6C8;
+                                <span class="infotext">Reduces animations on the page</span>
+                            </div>
+                        </h2>
+                        <label class="switch">
+                            <input type="checkbox" id="motion-switch" onclick="changeMotion()">
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contactBox" class="contact-page">
+            <!-- Contact content -->
+            <div class="contact-content">
+                <span class="close" onclick="closeContactPage()">&times;</span>
+                <div class="flex-wrapper">
+                    <div class="contact-grid">
+                        <div class="contact-content-box">
+                            <h1>Contact Us!</h1>
+                            
+                            <p>We always love to hear your feedback!<br>
+                                Do you have any questions? &nbsp;
+                                If so this is the place to ask.
+                            </p><br>
+                        </div>
+                        <div class="contact-content-box">
+                            <form onsubmit="alert('\nName: ' + name.value + '\nYour Email: ' + emailFrom.value + '\nCategory: ' + category.value + '\nMessage:\n' + message.value)">
+                                <label for="name"> Name:</label>
+                                <input type="text" name="name" placeholder="Your name..">
+                            
+                                <label for="emailFrom">Your Email:</label>
+                                <input type="text" name="emailFrom" placeholder="Email..">
+                            
+                                <label for="category">Category</label>
+                                <select name="category">
+                                <option value="select-category">Select Category...</option>
+                                <option value="Accessibility">Accessibility</option>
+                                <option value="Site-Issues">Site Issues</option>
+                                <option value="Safety-Issues">Safety Issues</option>
+                                <option value="Incorrect-Info">Incorrect Info</option>
+                                <option value="General">General</option>
+                                <option value="Other">Other</option>
+                                </select>
+                            
+                                <label for="message">Message</label>
+                                <textarea name="message" placeholder="Write something.." style="height:200px"></textarea>
+                            
+                                <input type="submit" value="Submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <!-- Top Section -->
+            <div class="top">
+                <img src="/assets/images/logo-with-text-right.png" onclick="window.location.href = 'index.html'"/>
+                <!-- <input type="text" placeholder="Search..."><button><div class="fal fa-search"></div></button> -->
+                <!-- Right Pannel -->
+                <div class="right">
+                    <!-- Icons -->
+                    <ul>
+                        <li><a onclick="openSettingsPage(2)"><i class="far fa-cog"></i></a></li>
+                        <li><a href=""><i class="far fa-shopping-cart"></i></a></li>
+                        <li><a href=""><i class="far fa-bell"></i></a></li>
+                        <li><a onclick="openSettingsPage(0)"><i class="far fa-user"></i></a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <!-- Bottom/Navigation Section -->
+            <div class="bottom">
+                <div class="navigation" id="navigationBar">
+                    <a href="index.html">Home</a>
+                    <a href="interviews.html">Interviews</a>
+                    <a href="rig-rundowns.html">Rig Rundowns</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a onclick="openContactPage()" class="right-end">Contact</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Top Grid -->
+        <div class="flex-wrapper">
+            <div class="images-body-container">
+                <div class="images-content">
+                    <img src="./assets/images/instruments/Electric/spector.png">
+                </div>
+                <div class="images-content">
+                    <!-- <p>Div 2</p> -->
+                    <video controls src="./assets/videos/compilation.mp4"></video>
+                </div>
+                <div class="images-content">
+                    <img src="./assets/images/instruments/Electric/strat-knopfler.png">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Slideshow Gallery -->
+        <div class="gallery-container">
+            
+            <div class="image-slider">
+                <div class="slides">
+                
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+                    
+                    <div class="slide first">
+                        <img src="./assets/images/gallery/carousel/john.png" alt="John Frusciante">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/images/gallery/carousel/queen.png" alt="Freddie Mercury">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/images/gallery/carousel/hendrix.png" alt="Jimi Hendrix">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/images/gallery/carousel/clapton.png" alt="Eric Clapton">
+                    </div>
+                    
+                    <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                        <div class="auto-btn4"></div>
+                    </div>
+                
+                </div>
+                
+                <div class="navigation-manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                    <label for="radio4" class="manual-btn"></label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <!-- Fade into Footer -->
+            <div class="fade"></div>
+            <!-- Main (inner) Footer -->
+            <div class="inner">
+                <!-- Grid Begins -->
+                <div class="container">
+                    <!-- "Box 1" - Newsletter Subscription Signup -->
+                    <div class="box paper">
+                        <p class="top black-font">Sign up to our Weekly Newsletter:</p>
+                        <input type="text" placeholder="Your Email"><button><b>Subscribe</b></button>
+                        <p class="tos">By clicking Subscribe, I agree that my data will not be<br>
+                            used anywhere as there is nothing linked to the button or<br> text field</p>        
+                    </div>
+                    <!-- "Box 2" - Contact information -->
+                    <div class="box address">
+                        <a onclick="openContactPage()"><p>Need to contact us? Click Here</p></a>
+                        <p>Copyright © 2021</p>
+                    </div>
+                    <!-- "Box 3" - Social Links -->
+                    <div class="box socials">
+                        <ul>
+                            <li><i class="fab fa-twitter"></i></li>
+                            <li><i class="fab fa-instagram"></i></li>
+                            <li><i class="fab fa-facebook"></i></li>
+                            <li><i class="fab fa-youtube"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

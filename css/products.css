@@ -1,0 +1,82 @@
+/* Set some different wrapper properties, could even create a new wrapper */
+.flex-wrapper.products {
+    width: 85%;
+    
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    min-height: 100px;
+}
+/*
+    ######   ######   ######   ####  
+    ##       ##  ##     ##     ##  ##
+    ##  ##   ####       ##     ##  ##
+    ##  ##   ##  ##     ##     ##  ##
+    ######   ##  ##   ######   ####  
+*/
+/* Create the Grid Layout */
+.product-container {
+    width: 90%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 325px));
+    grid-gap: 20px;
+    margin: 10px 0;
+}
+
+.content {
+    padding: 10px;
+    border: 2px solid var(--header-background);
+    transition: .5s ease-in-out;
+}
+
+.content:hover {
+    border: 2px solid var(--font-color);
+    transform: scale(1.025);
+    cursor: pointer;
+}
+
+/* Image Properties */
+.product-container .content img {
+    display: block;
+    width: 70%;
+
+    margin: auto;
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+}
+
+/* Sets h1 styles */
+.product-container .content h1 {
+    margin: auto;
+    margin-bottom: 10px;
+
+    text-align: center;
+    font-family: 'Bebas Neue';
+}
+
+/* Sets h2 Properties */
+.product-container .content h2 {
+    margin: auto;
+    text-align: center;
+    font-size: 15px;
+
+    transition: color 1s ease-in-out;
+}
+
+/* Sets p styles */
+.product-container .content p {
+    margin: auto;
+    margin-top: 10px;
+
+    text-align: center;
+    font-size: 15px;
+}
+
+
+/* Removes box shadow on each box */
+.product-container .content {
+    box-shadow: none;
+}

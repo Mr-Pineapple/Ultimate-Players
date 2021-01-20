@@ -1,0 +1,187 @@
+/* messy, no comments in here, because I clearly wasn't thinking at the time :P */
+
+/* Footer */
+footer {
+    position: absolute;
+
+    width: 100%;
+    height: 100px;
+}
+
+footer .fade {
+    width: 100%;
+    height: 18px;
+}
+
+/* Changes image depending on theme (Could be done with filters instead) */
+body.dark-mode footer .fade {
+    background: url("../assets/images/footer-fade-dark-mode.png") top;
+}
+
+body.light-mode footer .fade {
+    background: url("../assets/images/footer-fade.png") top;
+}
+
+footer .inner {
+    background: var(--footer-color);
+    height: auto;
+    padding: 10px 0 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner .container {
+    width: 80%;
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.container .box {
+    position: relative;
+
+    height: fit-content;
+    padding: 10px 0 10px 10px;
+
+    color: var(--footer-font-color);
+}
+
+.container .box * {
+    position: relative;
+    margin: 1%;
+    margin-left: 7px;
+}
+
+.container .box p.top {
+    padding-top: 10px;
+}
+
+.container .box input {
+    margin-right: 0;
+}
+.container .box button {
+    margin-left: 0;
+}
+
+.container .box.paper {
+    background: url("../assets/images/paper.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+
+footer .inner input {
+    padding: 5px;
+    line-height: 1.5em;
+
+    background: var(--footer-color);
+
+    border: 2px solid var(--main-background-color);
+    border-radius: 5px 0 0 5px;
+
+    color: var(--footer-font-color);
+}
+
+footer .inner button { 
+    padding: 5px;
+    line-height: 1.5em;
+
+    background: var(--footer-color);
+    
+    border: 2px solid var(--main-background-color);
+    border-radius: 0 5px 5px 0;
+    border-left: none;
+
+    color: var(--footer-font-color);
+    cursor: pointer;
+}
+
+footer .inner button:hover {
+    color: var(--accent-color);
+    transition: .2s;
+}
+
+footer .inner p {
+    margin: 0;
+    color: var(--newsletter-color);
+}
+footer .inner p.tos {
+    margin-top: 10px;
+
+    font-size: 10px;
+    color: var(--newsletter-color);
+}
+
+.box.address {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.box.address p {
+    color: var(--footer-font-color);
+}
+
+.box.address a p:hover {
+    color: var(--accent-color);
+    transition: .3s;
+    cursor: pointer;
+}
+
+
+.box.socials * {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.box.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 120px;
+}
+
+.box.socials ul {
+    display: flex;
+}
+
+.box.socials ul li {
+    position: relative;
+    display: block;
+    color: var(--footer-font-color);
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.box.socials ul li:nth-child(1):hover {
+    transition: .5s;
+    color: #1DA1F2;
+}
+
+.box.socials ul li:nth-child(2):hover {
+    transition: .5s;
+    color: #DC2A7B;
+}
+
+.box.socials ul li:nth-child(3):hover {
+    transition: .5s;
+    color: #0D8CF0;
+}
+
+.box.socials ul li:nth-child(4):hover {
+    transition: .5s;
+    color: #FF0000;
+}
+
+/* .box {
+    border: 2px solid red;
+} */

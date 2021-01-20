@@ -1,0 +1,183 @@
+/* This file seems to be a mess, bu it's split up by comments */
+
+/* Header */
+header {
+    padding: 0;
+    margin: 0;
+
+    height: 110px;
+    width: 100%;
+
+    background: var(--header-background);
+}
+
+/* Top section of the header */
+header .top {
+    height: 55px;
+    line-height: 55px;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid var(--main-background-color);
+
+    background: var(--header-background);
+}
+
+header .top img {
+    float: left;
+    height: 100%;
+
+    margin-left: 20px;
+    margin-right: 30px;
+}
+
+header .top a {
+    cursor: pointer;
+}
+
+header .top input {
+    padding: 5px;
+    line-height: 1.5em;
+    padding-left: 10px;
+
+    background: var(--header-background);
+    color: var(--font-color);
+
+    border: 2px solid var(--main-background-color);
+    border-radius: 10px 0 0 10px;
+    border-right: none;
+
+    width: 50%;
+    font-size: 20px;
+}
+
+header .top button {
+    /* padding-top: 4px;
+    padding-bottom: 8px;
+    padding-right: 10px;
+
+    background: var(--header-background);
+    border: 2px solid var(--main-background-color);
+    border-radius: 0 10px 10px 0;
+
+    font-size: 20px; */
+    padding: 5px;
+    line-height: 1.5em;
+    
+    background: var(--header-background);
+    color: var(--font-color);
+
+    background: var(--header-background);
+    border: 2px solid var(--main-background-color);
+    border-radius: 0 10px 10px 0;
+    border-left: none;
+
+    font-size: 20px;
+
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+header .top button:hover {
+    color: var(--accent-color);
+}
+
+
+/* Right panel of top header */
+header .right {
+    float: right;
+}
+
+header .right ul {
+    display: flex;
+    float: right;
+
+    margin: 0;
+    padding: 0;
+    margin-right: 20px;
+
+    list-style: none;
+}
+
+header .right ul li {
+    position: relative;
+    display: block;
+    
+    font-size: 30px;
+    height: 50px;
+    width: 20px;
+
+    margin: 0 15px;
+    color: var(--icon-color);
+}
+
+/* When the user hovers over the icons they change color */
+header .right ul li:hover {
+    color: var(--accent-color);
+    transition: .5s;
+}
+
+
+/* Bottom Header Section */
+ header .bottom {
+    height: 15px;
+    line-height: 15px;
+}
+
+/* Navigation */
+.bottom .navigation {
+    background-color: transparent;
+
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+.bottom .navigation a {
+    float: left;
+    display: block;
+
+    padding: 5px 10px 5px 10px;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+.bottom .navigation a:hover {
+    transition: .5s;
+    color: var(--accent-color);
+}
+
+.bottom .navigation a.right-end {
+    border-right: 1px solid var(--main-background-color);
+}
+
+@media only screen and (max-width: 1180px) {
+    header .top .right {
+        display: none;
+    }
+}
+@media only screen and (max-width: 770px) {
+    header .top input, header .top button {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
